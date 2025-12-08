@@ -344,6 +344,24 @@ body {
   color: var(--accent);
 }
 
+/* Event wrapper of upcoming, past events */
+.events-wrapper {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.events-wrapper ul {
+  padding-left: 1rem;
+  margin: 0.3rem 0 1rem;
+}
+
+.events-wrapper li {
+  margin-bottom: 0.4rem;
+  color: var(--muted);
+}
+
+
 /* Contact CTA */
 .contact-cta {
   text-align: center;
