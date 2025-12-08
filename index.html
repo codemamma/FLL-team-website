@@ -8,37 +8,6 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 
-<script>
-  function sortAndPlaceEvents() {
-    const today = new Date();
-    const allEvents = [...document.querySelectorAll('#all-events li')];
-
-    const upcomingList = document.getElementById('upcoming-events');
-    const pastList = document.getElementById('past-events');
-
-    const events = allEvents.map(item => {
-      return {
-        el: item,
-        date: new Date(item.dataset.date)
-      };
-    });
-
-    // Sort chronologically
-    events.sort((a, b) => a.date - b.date);
-
-    events.forEach(event => {
-      if (event.date >= today) {
-        upcomingList.appendChild(event.el.cloneNode(true));
-      } else {
-        pastList.appendChild(event.el.cloneNode(true));
-      }
-    });
-  }
-
-  sortAndPlaceEvents();
-</script>
-
-
 <body>
   <!-- Top Nav -->
   <header class="nav">
@@ -345,6 +314,36 @@
 
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+
+  <!-- Events script at the very end -->
+  <script>
+    function sortAndPlaceEvents() {
+      const today = new Date();
+      const allEvents = [...document.querySelectorAll('#all-events li')];
+
+      const upcomingList = document.getElementById('upcoming-events');
+      const pastList = document.getElementById('past-events');
+
+      const events = allEvents.map(item => {
+        return {
+          el: item,
+          date: new Date(item.dataset.date)
+        };
+      });
+
+      events.sort((a, b) => a.date - b.date);
+
+      events.forEach(event => {
+        if (event.date >= today) {
+          upcomingList.appendChild(event.el.cloneNode(true));
+        } else {
+          pastList.appendChild(event.el.cloneNode(true));
+        }
+      });
+    }
+
+    sortAndPlaceEvents();
   </script>
 </body>
 </html>
