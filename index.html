@@ -1,1 +1,275 @@
-a
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>FLL Waves, Flames & Games</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Top Nav -->
+  <header class="nav">
+    <div class="nav-logo">Waves · Flames · Games</div>
+    <nav class="nav-links">
+      <a href="#home">Home</a>
+      <a href="#team">Team Info</a>
+      <a href="#waves">Waves</a>
+      <a href="#flames">Flames</a>
+      <a href="#games">Games</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Hero / Home -->
+    <section id="home" class="hero">
+      <div class="hero-inner">
+        <p class="hero-subtitle">Hello, we are</p>
+        <h1 class="hero-title">FLL Waves, Flames & Games</h1>
+        <p class="hero-tagline">
+          A FIRST LEGO League team of curious kids who love building robots,
+          solving real-world problems, and having fun together.
+        </p>
+        <button class="hero-btn"
+                onclick="document.getElementById('team').scrollIntoView({behavior:'smooth'})">
+          meet the team
+        </button>
+      </div>
+    </section>
+
+    <!-- Team Info -->
+    <section id="team" class="section">
+      <p class="section-kicker">let's get to know each other</p>
+      <h2 class="section-title">Team Info</h2>
+
+      <p class="section-intro">
+        Our team brings together creative builders, coders, designers, and
+        storytellers. Below are our team members and coaches.
+      </p>
+
+      <h3 class="subheading">Team Members</h3>
+      <div class="cards people-cards">
+        <!-- Repeat this card for each kid -->
+        <article class="card person-card">
+          <img src="assets/member1.jpg" alt="Team member" class="person-photo" />
+          <h3 class="card-title">Name Here</h3>
+          <p class="person-role">Robot Builder & Driver</p>
+          <p class="card-text">
+            Short intro about this team member — what they enjoy, strengths,
+            or favorite part of FLL.
+          </p>
+        </article>
+
+        <article class="card person-card">
+          <img src="assets/member2.jpg" alt="Team member" class="person-photo" />
+          <h3 class="card-title">Name Here</h3>
+          <p class="person-role">Programmer</p>
+          <p class="card-text">
+            Short intro about this team member — coding, problem solving, or
+            favorite mission.
+          </p>
+        </article>
+
+        <!-- Add more member cards as needed -->
+      </div>
+
+      <h3 class="subheading">Coaches & Mentors</h3>
+      <div class="cards people-cards">
+        <article class="card person-card">
+          <img src="assets/coach1.jpg" alt="Coach" class="person-photo" />
+          <h3 class="card-title">Coach Name</h3>
+          <p class="person-role">Head Coach</p>
+          <p class="card-text">
+            Brief background on the coach, their role, and what they love
+            about mentoring the team.
+          </p>
+        </article>
+
+        <article class="card person-card">
+          <img src="assets/coach2.jpg" alt="Mentor" class="person-photo" />
+          <h3 class="card-title">Mentor Name</h3>
+          <p class="person-role">Technical Mentor</p>
+          <p class="card-text">
+            Brief description of how they support robot design, coding, or
+            innovation project.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <!-- Waves / Flames / Games (Projects-style) -->
+    <section id="waves" class="section project-section">
+      <p class="section-kicker">our robot & project story</p>
+      <h2 class="section-title">Waves</h2>
+      <p class="section-intro">
+        “Waves” is all about how we move, navigate, and sense the world. This
+        section can highlight your robot design, sensors, and clever mechanisms.
+      </p>
+
+      <div class="cards">
+        <article class="card">
+          <h3 class="card-title">Robot Design</h3>
+          <p class="card-text">
+            Describe your robot: drive base, attachments, special mechanisms,
+            and how the team designed and iterated on it.
+          </p>
+        </article>
+        <article class="card">
+          <h3 class="card-title">Programming</h3>
+          <p class="card-text">
+            Explain your coding approach, use of sensors, line following,
+            navigation strategies, or custom blocks.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section id="flames" class="section project-section">
+      <p class="section-kicker">innovation project</p>
+      <h2 class="section-title">Flames</h2>
+      <p class="section-intro">
+        “Flames” represents the spark of ideas. Use this space to explain your
+        Innovation Project: problem, solution, and impact.
+      </p>
+
+      <div class="cards">
+        <article class="card">
+          <h3 class="card-title">The Problem</h3>
+          <p class="card-text">
+            What real-world problem did your team choose? Why does it matter,
+            and who is affected?
+          </p>
+        </article>
+        <article class="card">
+          <h3 class="card-title">Our Solution</h3>
+          <p class="card-text">
+            Describe your prototype or solution idea. Include sketches,
+            models, or key features that make it unique.
+          </p>
+        </article>
+        <article class="card">
+          <h3 class="card-title">Research & Feedback</h3>
+          <p class="card-text">
+            Summarize how you researched the topic, who you talked to, and
+            what feedback you used to improve the idea.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section id="games" class="section project-section">
+      <p class="section-kicker">robot game & core values</p>
+      <h2 class="section-title">Games</h2>
+      <p class="section-intro">
+        “Games” is about teamwork, strategy, and fun. Highlight your Robot Game
+        missions, match stories, and how you live the FLL Core Values.
+      </p>
+
+      <div class="cards">
+        <article class="card">
+          <h3 class="card-title">Robot Game Highlights</h3>
+          <p class="card-text">
+            Talk about your highest score, favorite missions, and how the team
+            planned match strategy.
+          </p>
+        </article>
+        <article class="card">
+          <h3 class="card-title">Core Values</h3>
+          <p class="card-text">
+            Share examples of Discovery, Innovation, Impact, Inclusion,
+            Teamwork, and Fun from practices and tournaments.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <!-- Gallery -->
+    <section id="gallery" class="section">
+      <p class="section-kicker">memories from our season</p>
+      <h2 class="section-title">Gallery</h2>
+      <p class="section-intro">
+        A few snapshots from practices, robot testing, presentation run-throughs,
+        and tournament days.
+      </p>
+
+      <div class="gallery-grid">
+        <img src="assets/gallery1.jpg" alt="Team at practice" />
+        <img src="assets/gallery2.jpg" alt="Robot on the table" />
+        <img src="assets/gallery3.jpg" alt="Presentation time" />
+        <img src="assets/gallery4.jpg" alt="Team photo" />
+        <!-- Add more images as needed -->
+      </div>
+
+      <div class="highlights">
+        <div>
+          <h3 class="subheading">Tournament Highlights</h3>
+          <ul>
+            <li>🏆 Example: Champions Award – Qualifier, 2025</li>
+            <li>🤖 Robot Performance Award – XYZ Tournament</li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="subheading">Upcoming Events</h3>
+          <ul>
+            <li>Qualifier at <span class="highlight">[Venue]</span> – [Date]</li>
+            <li>Scrimmage with <span class="highlight">[Partner Team]</span> – [Date]</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="section contact-cta">
+      <p class="section-kicker">want to cheer us on?</p>
+      <h2 class="section-title">Contact the Team</h2>
+      <p class="section-intro">
+        Coaches, organizers, or other teams can reach us by email. We’d love
+        to hear from you about scrimmages, tournaments, or collaboration ideas.
+      </p>
+      <div class="btn-row" style="justify-content:center;">
+        <a href="mailto:fllwavesflamesgames@example.com" class="btn solid">
+          Email the Team
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-brand">FLL Waves, Flames &amp; Games</div>
+      <div class="footer-cols">
+        <div>
+          <h4>Links</h4>
+          <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#team">Team Info</a></li>
+            <li><a href="#waves">Waves</a></li>
+            <li><a href="#flames">Flames</a></li>
+            <li><a href="#games">Games</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Contact</h4>
+          <ul>
+            <li><a href="mailto:fllwavesflamesgames@example.com">
+              fllwavesflamesgames@example.com
+            </a></li>
+            <li>City, State</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      Built with LEGO bricks, curiosity, and teamwork © <span id="year"></span>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
+
