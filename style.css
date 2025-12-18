@@ -226,7 +226,7 @@ body {
 /* New wrapper to keep all photos consistent */
 .person-photo-wrapper {
   width: 100%;
-  aspect-ratio: 16 / 9;        /* or 4 / 3 if you prefer taller */
+  aspect-ratio: 4 / 5;        /* or 4 / 3 if you prefer taller */
   overflow: hidden;
   border-radius: calc(var(--radius) - 4px);
   margin-bottom: 0.6rem;
