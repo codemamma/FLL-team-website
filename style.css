@@ -110,6 +110,26 @@ body {
   border: 1px solid rgba(148, 163, 184, 0.16);
   box-shadow: 0 20px 55px rgba(0, 0, 0, 0.6);
   text-align: left;
+
+
+  /* new code for logo layout */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2.5rem 3rem;
+  gap: 2rem;
+}
+
+/* NEW – logo on the right */
+.hero-logo {
+  flex-shrink: 0;
+}
+
+.hero-logo img {
+  width: 160px;        /* adjust if needed */
+  height: auto;
+  object-fit: contain;
+  display: block;
 }
 
 .hero-inner {
