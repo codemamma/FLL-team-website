@@ -118,24 +118,41 @@
         </div>
 
 	<!-- View-only media (images) -->
-          <div class="media-strip">
-            <div class="media-label">Posters & Pamphlets</div>
-            <div class="media-thumb-row">
-              <button class="media-thumb" type="button"
-                data-gallery='["assets/innovation/2025-UNEARTHED/state-poster.jpeg","assets/innovation/2025-UNEARTHED/InnovationPosterState1.pdf"]'
-                data-start="0" aria-label="View UNEARTHED poster">
-                <img src="assets/innovation/2025-UNEARTHED/QT_Innovation_poster.jpeg" alt="UNEARTHED Quaterfinal Tournament poster thumbnail" draggable="false" />
-              </button>
-      
-              <button class="media-thumb" type="button"
-                data-gallery='["assets/innovation/2025-UNEARTHED/image1.png","assets/innovation/2025-UNEARTHED/pamphlet-1.png"]'
-                data-start="1" aria-label="View pamphlet">
-                <img src="assets/innovation/2025-UNEARTHED/InnovationPosterState1.pdf" alt="UNEARTHED State Innovation poster thumbnail" draggable="false" />
-              </button>
-            </div>
-          </div>
-        </div>
+        <section class="poster-block">
+  	  <h3 class="poster-title">Posters & Pamphlets</h3>
+  	  <p class="poster-subtitle">Tap to view full size</p>
 
+  	  <div class="poster-grid">
+	    
+	    <!-- Quaterfinals Poster -->
+    	    <button class="poster-card"
+      	      data-full="assets/innovation/2025-UNEARTHED/QT_Innovation_poster.jpeg">
+      	      <img
+        	src="assets/innovation/2025-UNEARTHED/QT_Innovation_poster.jpeg"
+        	alt="UNEARTHED Innovation Poster – Quarterfinals"
+        	loading="lazy"
+      	      />
+      	      <div class="poster-meta">
+                <div class="poster-name">Innovation Poster</div>
+                <div class="poster-year">Quarterfinals</div>
+              </div>
+            </button>
+
+	    <!-- State Poster -->
+    	    <button class="poster-card"
+      	      data-full="assets/innovation/2025-UNEARTHED/State_Innovation_poster.jpeg">
+      	      <img
+        	src="assets/innovation/2025-UNEARTHED/State_Innovation_poster.jpeg"
+        	alt="UNEARTHED Innovation Poster – State Championship"
+        	loading="lazy"
+      	      />
+              <div class="poster-meta">
+                <div class="poster-name">Innovation Poster</div>
+                <div class="poster-year">State Championship</div>
+              </div>
+            </button>	
+	  </div>
+        </section>
       </article>
 
       <!-- ========================= -->
