@@ -1,7 +1,10 @@
 // innovation.js
-// Tabs + modal gallery (images only)
+// Tabs + poster lightbox (images only)
 
 (function () {
+  // -------------------------
+  // Year tabs
+  // -------------------------
   function initInnovationTabs() {
     const tabs = document.querySelectorAll(".year-tab");
     const panels = document.querySelectorAll(".innovation-year");
@@ -27,84 +30,69 @@
     });
   }
 
-  function initMediaModal() {
-    const modal = document.getElementById("mediaModal");
-    const imgEl = document.getElementById("mediaImage");
-    const captionEl = document.getElementById("mediaCaption");
-    const closeBtn = document.getElementById("mediaClose");
-    const prevBtn = document.getElementById("mediaPrev");
-    const nextBtn = document.getElementById("mediaNext");
-    const bodyEl = document.getElementById("mediaBody");
+  // -------------------------
+  // Poster lightbox
+  // -------------------------
+  function initPosterLightbox() {
+    const lightbox = document.getElementById("lightbox");
+    const lightboxImg = document.getElementById("lightboxImg");
+    const lightboxClose = document.getElementById("lightboxClose");
 
-    if (!modal || !imgEl || !captionEl || !closeBtn || !prevBtn || !nextBtn) return;
+    if (!lightbox || !lightboxImg || !lightboxClose) return;
 
-    let gallery = [];
-    let index = 0;
-
-    function render() {
-      if (!gallery.length) return;
-      imgEl.src = gallery[index];
-      captionEl.textContent = `Viewing ${index + 1} / ${gallery.length}`;
-      prevBtn.disabled = index === 0;
-      nextBtn.disabled = index === gallery.length - 1;
+    function openLightbox(src, alt) {
+      lightboxImg.src = src;
+      lightboxImg.alt = alt || "Poster";
+      lightbox.classList.add("is-open");
+      lightbox.setAttribute("aria-hidden", "false");
     }
 
-    function openModal(list, startIdx) {
-      gallery = Array.isArray(list) ? list : [];
-      index = Math.max(0, Math.min(Number(startIdx) || 0, gallery.length - 1));
-      modal.classList.add("is-open");
-      modal.setAttribute("aria-hidden", "false");
-      render();
+    function closeLightbox() {
+      lightbox.classList.remove("is-open");
+      lightbox.setAttribute("aria-hidden", "true");
+      lightboxImg.src = "";
+      lightboxImg.alt = "";
     }
 
-    function closeModal() {
-      modal.classList.remove("is-open");
-      modal.setAttribute("aria-hidden", "true");
-      imgEl.src = "";
-      gallery = [];
-      index = 0;
-    }
+    // Open when clicking any poster card
+    document.addEventListener("click", (e) => {
+      const card = e.target.closest(".poster-card");
+      if (!card) return;
 
-    document.querySelectorAll(".media-thumb").forEach((btn) => {
-      btn.addEventListener("click", () => {
-        try {
-          const list = JSON.parse(btn.dataset.gallery || "[]");
-          const start = parseInt(btn.dataset.start || "0", 10);
-          openModal(list, start);
-        } catch (e) {
-          console.error("Invalid gallery JSON in data-gallery", e);
-        }
-      });
+      const full = card.getAttribute("data-full");
+      const img = card.querySelector("img");
+      if (!full || !img) return;
+
+      openLightbox(full, img.alt);
     });
 
-    closeBtn.addEventListener("click", closeModal);
-    modal.addEventListener("mousedown", (e) => {
-      if (e.target === modal) closeModal();
+    // Close button
+    lightboxClose.addEventListener("click", closeLightbox);
+
+    // Close on backdrop click
+    lightbox.addEventListener("click", (e) => {
+      if (e.target === lightbox) closeLightbox();
     });
 
-    prevBtn.addEventListener("click", () => {
-      index = Math.max(0, index - 1);
-      render();
+    // Escape key closes
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && lightbox.classList.contains("is-open")) {
+        closeLightbox();
+      }
     });
 
-    nextBtn.addEventListener("click", () => {
-      index = Math.min(gallery.length - 1, index + 1);
-      render();
+    // Optional: prevent easy right-click save on poster images (soft protection)
+    document.addEventListener("contextmenu", (e) => {
+      if (e.target.closest(".poster-card img") || e.target.closest(".lightbox-img")) {
+        e.preventDefault();
+      }
     });
-
-    window.addEventListener("keydown", (e) => {
-      if (!modal.classList.contains("is-open")) return;
-      if (e.key === "Escape") closeModal();
-      if (e.key === "ArrowLeft") { index = Math.max(0, index - 1); render(); }
-      if (e.key === "ArrowRight") { index = Math.min(gallery.length - 1, index + 1); render(); }
-    });
-
-    if (bodyEl) bodyEl.addEventListener("contextmenu", (e) => e.preventDefault());
   }
 
+  // Init
   document.addEventListener("DOMContentLoaded", () => {
     initInnovationTabs();
-    initMediaModal();
+    initPosterLightbox();
   });
 })();
 
